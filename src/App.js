@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import Split from './composition/Split';
 import './App.css';
 // import Tooltip from './composition/Tooltip';
 // import Messages from './Messages';
 // import TheDate from './state/TheDate';
-// import Counter from './state/Counter'
+//import Counter from './state/Counter'
 import HelloWorld from './state-drills/HelloWorld'
+// import Tabs from './state/Tabs'
+import Bomb from './state-drills/Bomb';
+import RouletteGun from './state-drills/RouletteGun';
+import Accordion from './state-drills/Accordion'
 
 // make 2 tooltips here and another inside the App directly
 // const firstTooltip = (
@@ -18,7 +22,32 @@ import HelloWorld from './state-drills/HelloWorld'
 //     officiis
 //   </Tooltip>
 // )
-class App extends Component {
+
+// const tabsProp = [
+//   { name: 'First tab',
+//     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.' },
+//   { name: 'Second tab',
+//     content: 'Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+//   { name: 'Third tab',
+//     content: 'Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur.' },
+// ];
+
+const sections = [
+  {
+    title: 'Section 1',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  },
+  {
+    title: 'Section 2',
+    content: 'Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!',
+  },
+  {
+    title: 'Section 3',
+    content: 'Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?',
+  },
+]
+
+class App extends React.Component {
   render() {
     return (
       
@@ -46,11 +75,19 @@ class App extends Component {
         // <Counter count={123}>
         //   <div></div>
         // </Counter>
-        <HelloWorld>
-          <div></div>
-        </HelloWorld>
-
-
+        // <div>
+        // <Tabs tabs={tabsProp} />
+        // </div>
+      <div className="App">
+        <h2>Hello World</h2>
+        <HelloWorld />
+        <h2>Bomb</h2>
+        <Bomb />
+        <h2>Roulette Gun</h2>
+        <RouletteGun bulletInChamber={6} />
+        <h2>Accordion</h2>
+        <Accordion sections={sections} />
+      </div>
     );
   }
 };
